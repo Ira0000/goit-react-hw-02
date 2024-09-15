@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "modern-normalize";
+// import "modern-normalize";
 import "./App.css";
 import Description from "./components/Description/Description";
 import Options from "./components/Options/Options";
@@ -8,11 +8,11 @@ import Notification from "./components/Notification/Notification";
 
 function App() {
   const [votingData, setVotingData] = useState(() => {
-    const saveData = JSON.parse(window.localStorage.getItem(`votingData`));
-    if (saveData?.length) {
-      return saveData;
+    const savedData = JSON.parse(window.localStorage.getItem(`votingData`));
+    console.log(savedData);
+    if (savedData !== null) {
+      return savedData;
     }
-
     return {
       good: 0,
       neutral: 0,
