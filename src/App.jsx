@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 import Description from "./components/Description/Description";
 import Options from "./components/Options/Options";
@@ -6,14 +6,26 @@ import Feedback from "./components/Feedback/Feedback";
 import Notification from "./components/Notification/Notification";
 
 function App() {
-  const [votingData, setVotingData] = useState({
-    good: 0,
-    neutral: 0,
-    bad: 0,
+  const [votingData, setVotingData] = useState(() => {
+    const saveData = JSON.parse(window.localStorage.getItem(`votingData`));
+    if (saveData?.length) {
+      return saveData;
+    }
+
+    return {
+      good: 0,
+      neutral: 0,
+      bad: 0,
+    };
   });
 
   const totalFeedback = votingData.good + votingData.neutral + votingData.bad;
   const positiveFeedback = Math.round((votingData.good / totalFeedback) * 100);
+
+  useEffect(() => {
+    // console.log(votingData);
+    window.localStorage.setItem(`votingData`, JSON.stringify(votingData));
+  }, [votingData]);
 
   const resetFeedback = () => {
     setVotingData(() => {

@@ -1,0 +1,56 @@
+.list {
+  justify-content: center;
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.btnGood {
+  padding: 10px;
+  background-color: transparent;
+  border: 2px solid rgb(6, 84, 6);
+  border-radius: 10%;
+  width: 65px;
+}
+
+.btnGood:hover {
+  background-color: rgb(76, 192, 76);
+}
+
+.btnNeutral {
+  padding: 10px;
+  background-color: transparent;
+  border: 2px solid rgb(216, 177, 23);
+  border-radius: 10%;
+  width: 65px;
+}
+
+.btnNeutral:hover {
+  background-color: rgb(230, 236, 74);
+}
+
+.btnBad {
+  padding: 10px;
+  background-color: transparent;
+  border: 2px solid rgb(133, 10, 10);
+  border-radius: 10%;
+  width: 65px;
+
+  transition: ease-in-out;
+}
+
+.btnBad:hover {
+  background-color: rgb(211, 37, 34);
+}
+
+.btnReset {
+  padding: 10px;
+  background-color: transparent;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 10%;
+  width: 65px;
+}
+
+.btnReset:hover {
+  background-color: #3a3a3a;
+}
