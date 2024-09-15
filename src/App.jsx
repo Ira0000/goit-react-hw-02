@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "modern-normalize";
 import "./App.css";
 import Description from "./components/Description/Description";
 import Options from "./components/Options/Options";
